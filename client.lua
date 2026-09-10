@@ -35,6 +35,10 @@ function burry()
     Wait(6500)
     SetCurrentPedWeapon(PlayerPedId(), GetHashKey('WEAPON_UNARMED'), true)
     Citizen.InvokeNative(0xFCCC886EDE3C63EC,PlayerPedId(),false,true)
+    
+    -- Trigger payout event on the server
+    TriggerServerEvent('burial:payout')
+    
     started = false
 end
 
